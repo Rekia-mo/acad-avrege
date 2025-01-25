@@ -127,7 +127,7 @@ function calc(){
         condition = false;
         document.querySelector(`.worning-tp-${moduleName}`).innerHTML = `*Invalid marks for ${moduleName}. Enter marks between 0 and 20.`;
       }else{
-        document.querySelector(`.worning-tp-${moduleName}`).innerHTML =''
+        document.querySelector(`.worning-tp-${moduleName}`).innerHTML ='';
       }
        moy = (0.3 * noteTd + 0.2 * noteTp + 0.5 * noteExam).toFixed(2);
        
@@ -151,7 +151,6 @@ function calc(){
       }
       //calc the moy
        moy = (0.4 * noteTd + 0.6 * noteExam).toFixed(2);
-       if(condition === false){}
        
     };
 
