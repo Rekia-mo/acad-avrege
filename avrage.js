@@ -99,7 +99,10 @@ function calc(){
       if(noteExam < 0 || noteExam > 20 || isNaN(noteExam)){
         condition = false;
         document.querySelector(`.worning-exam-${moduleName}`).innerHTML = `*Invalid marks for ${moduleName}. Enter marks between 0 and 20.`
+      }else{
+        document.querySelector(`.worning-exam-${moduleName}`).innerHTML =''
       }
+      
       moy = (Number(noteExam)).toFixed(2);
 
     }else if(moduleName === 'ALGO'){
@@ -107,19 +110,24 @@ function calc(){
       if(noteTd < 0 || noteTd > 20 || isNaN(noteTd)){
         condition = false;
         document.querySelector(`.worning-td-${moduleName}`).innerHTML = `*Invalid marks for ${moduleName}. Enter marks between 0 and 20.`
+      }else{
+        document.querySelector(`.worning-td-${moduleName}`).innerHTML =''
       }
       //Bring the exam's val
       const noteExam = Number(document.querySelector(`.exam-${moduleName}`).value);
       if(noteExam < 0 || noteExam > 20 || isNaN(noteExam)){
         condition = false;
         document.querySelector(`.worning-exam-${moduleName}`).innerHTML = `*Invalid marks for ${moduleName}. Enter marks between 0 and 20.` 
+      }else{
+        document.querySelector(`.worning-exam-${moduleName}`).innerHTML =''
       }
       //Bring the tp's val
       const noteTp = Number(document.querySelector(`.tp-${moduleName}`).value);
       if(noteTp < 0 || noteTp > 20 || isNaN(noteTp)){
         condition = false;
         document.querySelector(`.worning-tp-${moduleName}`).innerHTML = `*Invalid marks for ${moduleName}. Enter marks between 0 and 20.`;
-
+      }else{
+        document.querySelector(`.worning-tp-${moduleName}`).innerHTML =''
       }
        moy = (0.3 * noteTd + 0.2 * noteTp + 0.5 * noteExam).toFixed(2);
        
@@ -130,12 +138,16 @@ function calc(){
       if(noteTd < 0 || noteTd > 20 || isNaN(noteTd)){
         condition = false;
         document.querySelector(`.worning-td-${moduleName}`).innerHTML = `*Invalid marks for ${moduleName}. Enter marks between 0 and 20.`
+      }else{
+        document.querySelector(`.worning-td-${moduleName}`).innerHTML =''
       }
       //Bring the exam's val
       const noteExam = Number(document.querySelector(`.exam-${moduleName}`).value);
       if(noteExam < 0 || noteExam > 20 || isNaN(noteExam)){
         condition = false;
         document.querySelector(`.worning-exam-${moduleName}`).innerHTML = `* Invalid marks for ${moduleName}. Enter marks between 0 and 20.`
+      }else{
+        document.querySelector(`.worning-exam-${moduleName}`).innerHTML =''
       }
       //calc the moy
        moy = (0.4 * noteTd + 0.6 * noteExam).toFixed(2);
@@ -162,6 +174,8 @@ function condition(){
   if(calc() === false){
     document.querySelector('.js-condition').innerHTML = '<span class="material-symbols-outlined">warning</span>your marks are invalid go back and check your marks';
     return ;
+  }else{
+    document.querySelector('.js-condition').innerHTML = '';
   }
 }
 
