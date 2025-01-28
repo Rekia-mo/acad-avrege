@@ -197,7 +197,7 @@ function calc(){
       }
 
       //calc the moy
-       moy = (0.4 * noteTd + 0.6 * noteExam).toFixed(2);
+       moy = ((noteTd + noteExam * 2)/3).toFixed(2);
     };
 
     doc1.innerHTML += `<section class="section"><div class="moduleName"> ${moduleName} </div> <div class="moduleMoy">${moy}</div></section>`;
